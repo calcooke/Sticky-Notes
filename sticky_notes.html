@@ -24,14 +24,14 @@
  
 <script>
     
-    $(document).click( function(e){
+    $("#board").click( function(e){
         
-        if(event.target.attr("id") == "deleteButton"){
-            
-            alert("hi");
-        }
+     if(e.target == $('#deletebutton')){
+         
+         alert('hi');
+     };
         
-        var sticky = $("<div class='newNote' > <h1>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
+        var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
             
             position: "absolute",
             top: event.pageY,
@@ -49,15 +49,12 @@
         
     })
     
-    $("#deleteButton").click( function(e){
-        
-        alert('hi');
-        event.stopPropagation();
-        $(this).fadeOut();
-        
-        
-    })
-          
+   function deleteThis(){
+       
+       
+       $(this).fadeOut();
+       
+   };  
 
     
 
