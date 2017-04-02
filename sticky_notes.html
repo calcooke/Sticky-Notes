@@ -5,9 +5,14 @@
     
 <link rel="stylesheet" type="text/css" href="sticky_notes_css.css">    
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
     
-    <link src="sticky_notes_jquery.js"> 
+    
+    
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css"/>
     
 
 
@@ -32,7 +37,7 @@ $(document).ready(function(){
         
    
         
-        var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
+        var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").draggable().css({
             
             position: "absolute",
             top: 200,
