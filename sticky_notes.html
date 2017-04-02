@@ -26,6 +26,11 @@
     
     $(document).click( function(e){
         
+        if(event.target.attr("id") == "deleteButton"){
+            
+            alert("hi");
+        }
+        
         var sticky = $("<div class='newNote' > <h1>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
             
             position: "absolute",
@@ -46,6 +51,7 @@
     
     $("#deleteButton").click( function(e){
         
+        alert('hi');
         event.stopPropagation();
         $(this).fadeOut();
         
