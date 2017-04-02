@@ -26,7 +26,10 @@
     
     $("#board").click( function(e){
         
-    
+    if($(event.target) == $("button")){
+        
+        alert("hi");
+    }
         
         var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
             
@@ -46,7 +49,11 @@
         
     })
     
-    
+    $("#deleteButton").click( function(){
+        
+        $(this).remove();
+        
+    })
     
    
 
