@@ -26,10 +26,7 @@
     
     $("#board").click( function(e){
         
-     if(e.target == $('#deletebutton')){
-         
-         alert('hi');
-     };
+    
         
         var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
             
@@ -49,12 +46,9 @@
         
     })
     
-   function deleteThis(){
-       
-       
-       $(this).fadeOut();
-       
-   };  
+    
+    
+   
 
     
 
