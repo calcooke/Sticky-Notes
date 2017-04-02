@@ -19,12 +19,27 @@
     
  
 <script>
+    
+    $(document).click( function(e){
+        
+        var sticky = $("<div class='newNote' contenteditable='true'> <button id='deleteButton'>X </div>").css({
+            
+            position: "absolute",
+            top: event.pageY,
+            left: event.pageX,
+            
+            
+        });
+        
+        
+        
+    })
           
 
     
 
     
-    </script>
+</script>
     
 </body>
     
