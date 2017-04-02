@@ -42,7 +42,7 @@ $(document).ready(function(){
         
     function createNote(){
         
-        var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
+        var sticky = $("<div class='newNote' > <h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
             
             position: "absolute",
             top: 200,
@@ -57,6 +57,11 @@ $(document).ready(function(){
         
     $(sticky).prependTo($("#board")); 
     };
+    
+    $(document).on("click", '#deleteButton', function (e) {
+        $(event.target).remove();
+        
+    });
     
 });
     
