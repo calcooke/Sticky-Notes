@@ -24,9 +24,9 @@
  
 <script>
     
-    $('#board').click( function(e){
+    $(document).click( function(e){
         
-        var sticky = $("<div class='newNote' contenteditable='true'> <button id='deleteButton'>X </div>").css({
+        var sticky = $("<div class='newNote' > <h1>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
             
             position: "absolute",
             top: event.pageY,
@@ -44,9 +44,10 @@
         
     })
     
-    $("#deleteButton").click( function(){
+    $("#deleteButton").click( function(e){
         
         $(this).remove();
+        e.stopPropagation();
         
     })
           
