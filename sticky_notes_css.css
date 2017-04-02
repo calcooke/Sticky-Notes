@@ -5,7 +5,7 @@
         background-color: red;
 }
 
-.deleteButton{
+#deleteButton{
     
     position: absolute;
     bottom : 2px;

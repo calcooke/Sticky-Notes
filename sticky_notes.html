@@ -32,7 +32,7 @@ $(document).ready(function(){
         
    
         
-        var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button class='deleteButton'>X </div>").css({
+        var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
             
             position: "absolute",
             top: 200,
@@ -51,13 +51,16 @@ $(document).ready(function(){
     });
     
     
-    $(".deleteButton").click( function(){
+    $("#deleteButton").click( function(){
     
    
-        $("button").fadeOut();
+        $("*").fadeOut();
     
-
-
+    });
+    
+    $("#newNote").click( function(){
+        
+        alert("hello");
     });
     
 });
