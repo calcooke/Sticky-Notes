@@ -21,8 +21,14 @@
     background-color: coral;
 }
 
-#textAra{
+#textArea{
     
     width: 250px;
     height: 250px;
+}
+
+h1{
+    
+    margin-top: 0px;
+    margin-bottom: 2px;
 }

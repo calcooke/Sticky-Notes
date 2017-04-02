@@ -46,8 +46,9 @@
     
     $("#deleteButton").click( function(e){
         
-        $(this).remove();
-        e.stopPropagation();
+        event.stopPropagation();
+        $(this).fadeOut();
+        
         
     })
           
