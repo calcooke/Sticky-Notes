@@ -18,13 +18,17 @@
 <body>
 
     <div id="board">
+        
+        <button id="addNote">Add</button>
     
     
     </div>
  
 <script>
     
-    $("#board").click( function(e){
+$(document).ready(function(){
+    
+    $("#addNote").click( function(e){
         
     
         
@@ -47,11 +51,14 @@
     })
     
     
+    $("#deleteButton").click( function(){
     
    
-
+        $(this).fadeOut();
     
 
+
+    })
     
 </script>
     
