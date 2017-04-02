@@ -26,17 +26,28 @@
  
 <script>
     
-$(function () {
+$(document).ready(function(){
     
-    alert("hit");
-    
-    $("#board").click( function(){
+    $("#addNote").click( function(e){
         
    
-       alert("hi");
+        
+       alert("hi");   
+        
+        
+    });
+    
+    
+    $("#deleteButton").click( function(){
+    
+   
+        $(this).fadeOut();
+    
 
 
     });
+    
+});
     
 </script>
     
