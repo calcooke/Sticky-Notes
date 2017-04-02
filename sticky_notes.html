@@ -16,10 +16,10 @@
 </head>
     
 <body>
- <button id="addNote">Add</button>
+
     <div id="board">
         
-       
+        <button id="addNote">Add</button>
     
     
     </div>
@@ -28,29 +28,37 @@
     
 $(document).ready(function(){
     
-    
+    $("#board").click( function(e){
         
    
+        
+        var sticky = $("<div class='newNote' > <h1 id='header'>Note</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
+            
+            position: "absolute",
+            top: 200,
+            left: 200,
+            height: 300,
+            width: 250,
+            backgroundColor: "#FDFDC3"
+            
+   
+        });
+        
+        
+    $(sticky).prependTo($("#board"));    
+        
+        
+    });
     
     
-    $("#addNote").click( function(e){
+    $("#deleteButton").click( function(){
     
    
-       alert('hi');
+        $(this).fadeOut();
     
 
 
     });
-    
-     $("#board").click( function(e){
-    
-   
-       alert('hi');
-    
-
-
-    });
-    
     
 </script>
     
