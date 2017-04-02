@@ -4,3 +4,10 @@
         height: 400px;
         background-color: red;
 }
+
+#deleteButton{
+    
+    position: absolute;
+    bottom : 2px;
+    right: 2px;
+}
