@@ -17,11 +17,14 @@
     
 <body>
 
-    <div id="board"></div>
+    <div id="board">
+    
+    
+    </div>
  
 <script>
     
-    $(document).click( function(e){
+    $('#board').click( function(e){
         
         var sticky = $("<div class='newNote' contenteditable='true'> <button id='deleteButton'>X </div>").css({
             
@@ -38,6 +41,12 @@
         
     $(sticky).prependTo($("#board"));    
         
+        
+    })
+    
+    $("#deleteButton").click( function(){
+        
+        $(this).remove();
         
     })
           

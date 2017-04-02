@@ -11,3 +11,12 @@
     bottom : 2px;
     right: 2px;
 }
+
+#board{
+    
+    
+    width: 500px;
+    height: 500px;
+    
+    background-color: coral;
+}
