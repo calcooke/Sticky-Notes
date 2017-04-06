@@ -54,12 +54,14 @@ $(document).ready(function(){
             backgroundColor: "#FDFDC3"
         
    
-        });
+        }).draggable();
         
         
         
         
-    $(sticky).prependTo($("#board")); 
+    $(sticky).prependTo($("#board").); 
+        
+        
         
     
         
@@ -73,17 +75,17 @@ $(document).ready(function(){
     
     
     
-    $(document).on("mousedown", '#header', function (e) {
-        $(event.target).parent().draggable("enabled");
-       
-        
-    });
-    
-    $('#header').mouseup( function(){
-        
-        $(this).draggable("disabled");
-        
-    })
+//    $(document).on("mousedown", '#header', function (e) {
+//        $(event.target).parent().draggable("enabled");
+//       
+//        
+//    });
+//    
+//    $('#header').mouseup( function(){
+//        
+//        $(this).draggable("disabled");
+//        
+//    })
     
       
         
