@@ -33,22 +33,22 @@
     
 $(document).ready(function(){
     
-    $("#addNote").click( function(){
+    $(document).click( function(e){
         
    
-       createNote();
-            
+       createNote(e);
+            event.stopPropagation();
    
         });
         
         
-    function createNote(){
+    function createNote(e){
         
         var sticky = $("<div class='newNote' > <h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X</button> </div>").css({
             
             position: "absolute",
-            top: 200,
-            left: 200,
+             top: event.pageY,
+            left: event.pageX,
             height: 300,
             width: 250,
             backgroundColor: "#FDFDC3"
@@ -61,7 +61,7 @@ $(document).ready(function(){
         
     $(sticky).prependTo($("#board")); 
         
-    $("#header").draggable("disabled");
+    
         
     };
     
@@ -73,8 +73,9 @@ $(document).ready(function(){
     
     
     
-    $(document).on("mousedown", '#header', function (e) {
-        $(event.target).parent().draggable("enabled");
+    $(document).on("mousedown", '.newNote', function (e) {
+        $(event.target).parent().draggable();
+        event.stopPropagation();
        
         
     });
