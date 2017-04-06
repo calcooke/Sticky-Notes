@@ -8,11 +8,13 @@
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"></script>
     
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css"/>
     
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
     
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css"/>
-    
-
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
    
     
@@ -42,7 +44,7 @@ $(document).ready(function(){
         
     function createNote(){
         
-        var sticky = $("<div class='newNote' > <h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X </div>").css({
+        var sticky = $("<div class='newNote' > <h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X</button> </div>").css({
             
             position: "absolute",
             top: 200,
@@ -50,16 +52,29 @@ $(document).ready(function(){
             height: 300,
             width: 250,
             backgroundColor: "#FDFDC3"
-            
+        
    
         });
         
         
+        
+        
     $(sticky).prependTo($("#board")); 
+        
+    
+        
     };
     
+   
+    $('#header').mousedown( function () {
+        $(this).parent().draggable();
+        
+    });
+    
+   
+    
     $(document).on("click", '#deleteButton', function (e) {
-        $(event.target).remove();
+        $(event.target).parent().fadeOut();
         
     });
     
