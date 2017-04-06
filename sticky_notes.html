@@ -66,8 +66,14 @@ $(document).ready(function(){
     };
     
    
-    $('#header').mousedown( function () {
-        $(this).parent().draggable();
+    $('.newNote').mousedown( function () {
+        alert("yay");
+        
+    });
+    
+     
+    $(document).on("click", '#deleteButton', function (e) {
+        $(event.target).parent().fadeOut();
         
     });
     
