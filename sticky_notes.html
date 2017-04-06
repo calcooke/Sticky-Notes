@@ -61,7 +61,7 @@ $(document).ready(function(){
         
     $(sticky).prependTo($("#board")); 
         
-    
+    $("#header").draggable("disabled");
         
     };
     
@@ -71,20 +71,17 @@ $(document).ready(function(){
 //        
 //    });
     
-     
+    
+    
     $(document).on("mousedown", '#header', function (e) {
-        $(event.target).parent().draggable();
+        $(event.target).parent().draggable("enabled");
        
         
     });
     
-      $(document).on("mouseover", '#header', function (e) {
-        $(event.target).attr({
-            contentEditable :"true"
-        });
-       
+      
         
-    });
+   
     
     
    
