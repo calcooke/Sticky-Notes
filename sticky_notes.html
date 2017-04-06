@@ -44,7 +44,7 @@ $(document).ready(function(){
         
     function createNote(){
         
-        var sticky = $("<div class='newNote' > <h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X</button> </div>").css({
+        var sticky = $("<div class='newNote' draggable="true"> <h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X</button> </div>").css({
             
             position: "absolute",
             top: 200,
@@ -66,16 +66,18 @@ $(document).ready(function(){
     };
     
    
-    $('.newNote').mousedown( function () {
-        alert("yay");
-        
-    });
+//    $('.newNote').mousedown( function () {
+//        alert("yay");
+//        
+//    });
     
      
-    $(document).on("click", '#deleteButton', function (e) {
-        $(event.target).parent().fadeOut();
-        
-    });
+//    $(document).on("mousedown", '#header', function (e) {
+//        $(event.target).parent().draggable();
+//        $(event.target).on("mouseup", '#header', function (e) {
+//        $(event.target).parent().draggable("disable");});
+//        
+//    });
     
    
     
