@@ -61,13 +61,16 @@ $(document).ready(function(){
     
     $(document).on("mousedown", '#header', function (e) {
         
-        $(this).parent()draggable({ disabled: false,
-                          stop: saveText});
+        $(this).parent().draggable({ disabled: false,
+                          stop: saveText,
+                                event.stopPropagation();
+                                   
+                                   });
         
         
    }).on("mouseup", '#header', function (e) {
         
-        $(this).parent()draggable({ disabled: true })
+        $(this).parent().draggable({ disabled: true })
     });
 
  
