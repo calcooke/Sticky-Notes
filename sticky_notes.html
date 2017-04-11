@@ -101,6 +101,14 @@ $(document).ready(function(){
     
     function saveText(){
         
+        notes = $("#board .newNote").map(function (i) {
+        return {
+            text: $("textarea", this).val(),
+            position: $(this).offset()
+        }
+    }).get()
+    console.log(JSON.stringify(notes, 0, 4))
+    localStorage.stickyNote = JSON.stringify(notes)
         
     };
     
