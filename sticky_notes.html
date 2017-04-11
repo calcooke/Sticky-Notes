@@ -45,19 +45,19 @@ $(document).ready(function(){
             left: 200,
         };
    
-       createNote();
+       createNote(placeholder, position);
             
    
         });
         
         
-    function createNote(){
+    function createNote(placeholder, position){
         
         var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
             
             position: "absolute",
-            top: 200,
-            left: 200,
+            top: position.top,
+            left: position.left,
             height: 300,
             width: 250,
             backgroundColor: "#FDFDC3"
@@ -67,7 +67,7 @@ $(document).ready(function(){
         
         var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
         
-        savedNotes.push(stickyText);
+        
         
         stickyText.appendTo(sticky); 
         
