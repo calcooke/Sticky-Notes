@@ -44,21 +44,18 @@ $(document).ready(function(){
         
     function createNote(){
         
-        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
-            
-            position: "absolute",
+        var sticky = $("<div id='newNote' > <button id='deleteButton'>X</button> </div>");
+        
+        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
+        
+        stickyText.appendTo(sticky).css({
+        position: "absolute",
             top: 200,
             left: 200,
             height: 300,
             width: 250,
             backgroundColor: "#FDFDC3"
-        
-   
-        });
-        
-        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
-        
-        stickyText.appendTo(sticky);
+    }).draggable();
         
         
         
@@ -69,10 +66,10 @@ $(document).ready(function(){
         
     };
 
-    $(".newNote").click(function(){
-        
-        alert("hi");
-    });
+//    $("#newNote").click(function(){
+//        
+//        alert("hi");
+//    });
     
    
 //    $('.newNote').mousedown( function () {
@@ -82,11 +79,11 @@ $(document).ready(function(){
     
     
     
-//    $(document).on("mousedown", '#header', function (e) {
-//        $(event.target).parent().draggable("enabled");
-//       
-//        
-//    });
+    $(document).on("mousedown", '#header', function (e) {
+        $(event.target).parent().draggable("enabled");
+       
+        
+   });
 //    
 //    $('#header').mouseup( function(){
 //        
@@ -102,7 +99,7 @@ $(document).ready(function(){
    
     
     $(document).on("click", '#deleteButton', function (e) {
-        $(event.target).parent().fadeOut();
+        $(event.target).parent().fadeOut().remove();
         
     });
     
