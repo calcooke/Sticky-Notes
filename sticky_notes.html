@@ -44,7 +44,7 @@ $(document).ready(function(){
         
     function createNote(){
         
-        var sticky = $("<div class='newNote' > <h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div><button id='deleteButton'>X</button> </div>").css({
+        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
             
             position: "absolute",
             top: 200,
@@ -56,10 +56,14 @@ $(document).ready(function(){
    
         });
         
+        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
+        
+        stickyText.appendTo(sticky);
         
         
         
-    $(sticky).prependTo($("#board")); 
+        
+    $(sticky).prependTo($("#board")).draggable(); 
         
         
         
