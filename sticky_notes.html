@@ -63,7 +63,7 @@ $(document).ready(function(){
         
         
         
-    $(sticky).prependTo($("#board")).dragable(); 
+    $(sticky).prependTo($("#board")); 
         
     
         
@@ -79,7 +79,11 @@ $(document).ready(function(){
 //        alert("yay");
 //        
 //    });
-    
+     $(document).on("mouseup", '#header', function (e) {
+        $(event.target).parent().
+       
+        
+   });
     
     
     $(document).on("mousedown", '#header', function (e) {
