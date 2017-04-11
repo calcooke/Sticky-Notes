@@ -63,9 +63,8 @@ $(document).ready(function(){
         
         $(this).parent().draggable({ disabled: false,
                           stop: saveText,
-                                event.stopPropagation();
-                                   
                                    });
+        $("#board").off("click");
         
         
    }).on("mouseup", '#header', function (e) {
