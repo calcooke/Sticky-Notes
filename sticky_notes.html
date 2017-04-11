@@ -84,7 +84,8 @@ $(document).ready(function(){
     
     
     $(document).on("mousedown", '.newNote', function (e) {
-        $(this).draggable({ disabled: false });
+        $(this).draggable({ disabled: false,
+                          stop: loadNotes});
    }).on("mouseup", '.newNote', function (e) {
         $(this).draggable({ disabled: true })});
 
@@ -95,7 +96,8 @@ $(document).ready(function(){
     });
     
     function loadNotes(){ 
-        
+       
+        alert("hi");
        
     };
     
@@ -118,6 +120,7 @@ $(document).ready(function(){
 </script>
     
 </body>
+   
     
 <!--
 function populateTable(){   
