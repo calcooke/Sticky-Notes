@@ -79,18 +79,13 @@ $(document).ready(function(){
 //        alert("yay");
 //        
 //    });
-     $(document).on("mouseup", '#header', function (e) {
-        $(event.target).parent().
-       
-        
-   });
     
     
-    $(document).on("mousedown", '#header', function (e) {
-        $(event.target).parent().draggable("enabled");
-       
-        
-   });
+    
+    $(document).on("mousedown", '#newNote', function (e) {
+        $(this).draggable({ disabled: false });
+   }).on("mousedown", '#newNote', function (e) {
+        $(this).draggable({ disabled: true });;
 //    
 //    $('#header').mouseup( function(){
 //        
