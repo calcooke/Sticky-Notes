@@ -73,12 +73,13 @@ $(document).ready(function(){
         
     });
     
-    function loadNotes(){ 
+    function loadNotes(){                                           //LOAD NOTES - LOAD NOTES - LOAD NOTES
        
-        var notes = JSON.parse(localStorage.stickies || "[]")
+        var notes = JSON.parse(localStorage.stickyNote || "[]");
+        
     $.each(notes, function (i, note) {
         
-        createNote(note.text, note.position);
+        createNote(sticky.text, sticky.position);
         
     })
     return notes
@@ -86,7 +87,7 @@ $(document).ready(function(){
        
     };
     
-    function saveText(){
+    function saveText(){                                              //SAVE NOTES - SAVE NOTES - SAVE NOTES
         
         notes = $("#board .newNote").map(function (i) {
         return {
@@ -99,7 +100,7 @@ $(document).ready(function(){
         
     };
     
-    function createNote(placeholder, position){
+    function createNote(placeholder, position){                               //CREATE NOTES - CREATE NOTES - CREATE NOTES
         
         var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
             
@@ -119,7 +120,7 @@ $(document).ready(function(){
         
         stickyText.appendTo(sticky); 
         
-        stickyText.keyup(saveText);  // SAVING TO LOCAL STORAGE FUNCTION CALLED HERE!!!!
+        stickyText.keyup(saveText);                                       // SAVING TO LOCAL STORAGE FUNCTION CALLED HERE!!!!
                 
         
     $(sticky).prependTo($("#board")); 
