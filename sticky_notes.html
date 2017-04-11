@@ -51,23 +51,9 @@ $(document).ready(function(){
         });
         
         
-        
-        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
-        
-        
-        
-        stickyText.appendTo(sticky); 
-        
-        stickyText.keyup(saveText);  // SAVING TO LOCAL STORAGE FUNCTION CALLED HERE!!!!
-                
-        
-    $(sticky).prependTo($("#board")); 
-        
-   
-        
-    });
     
-);
+    
+});
     
     
     
@@ -126,6 +112,21 @@ $(document).ready(function(){
         
    
         });
+        
+        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
+        
+        
+        
+        stickyText.appendTo(sticky); 
+        
+        stickyText.keyup(saveText);  // SAVING TO LOCAL STORAGE FUNCTION CALLED HERE!!!!
+                
+        
+    $(sticky).prependTo($("#board")); 
+        
+   
+        
+    };
     
 
     
