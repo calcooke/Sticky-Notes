@@ -58,12 +58,14 @@ $(document).ready(function(){
     
     
     
+    
     $(document).on("mousedown", '.newNote', function (e) {
-        
+        event.stopPropagation();
         $(this).draggable({ disabled: false,
                           stop: saveText});
-   }).on("mouseup", '.newNote', function (e) {
         
+   }).on("mouseup", '.newNote', function (e) {
+        event.stopPropagation();
         $(this).draggable({ disabled: true })
     });
 
@@ -137,20 +139,4 @@ $(document).ready(function(){
 </body>
    
     
-<!--
-function populateTable(){   
 
-	var newTable = document.getElementById("theTable");     //Putting the blank table into a variable to work with it
-      
-	var pastMembers = JSON.parse(localStorage.getItem("keyItem"));   //Parsing the objects in local storage to a string and store in a variable
-       
-    for(var i = 0; i < pastMembers.length; ++i) {   //Loop through this variable
-    
-                                          
-                                          put the key value pairs into the table/put stickies on board?
-                                          
-                                          
-     window.localStorage.setItem("keyItem", JSON.stringify(members));    // Convert to JSON format to store locally.
-                                          
-                                          this was to convert the table into json and store it every time a row was created
-  -->
