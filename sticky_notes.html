@@ -79,7 +79,7 @@ $(document).ready(function(){
         
     $.each(notes, function (i, note) {
         
-        createNote(sticky.text, sticky.position);
+        createNote(note.text, note.position);
         
     })
     return notes
@@ -91,7 +91,7 @@ $(document).ready(function(){
         
         notes = $("#board .newNote").map(function (i) {
         return {
-            text: $("textarea", this).val(),
+            text: $("#textArea", this).text(),
             position: $(this).offset()
         }
     }).get()
