@@ -84,8 +84,8 @@ $(document).ready(function(){
     
     $(document).on("mousedown", '#newNote', function (e) {
         $(this).draggable({ disabled: false });
-   }).on("mousedown", '#newNote', function (e) {
-        $(this).draggable({ disabled: true });;
+   }).on("mouseup", '#newNote', function (e) {
+        $(this).draggable({ disabled: true })});
 //    
 //    $('#header').mouseup( function(){
 //        
