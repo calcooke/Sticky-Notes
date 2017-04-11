@@ -56,15 +56,7 @@ $(document).ready(function(){
    
         });
         
-        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>").css({
-            
-            
-            height: 270,
-            width: 240,
-            backgroundColor: "#FF530D"
-        
-   
-        });
+        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
         
         stickyText.appendTo(sticky);
         
@@ -76,6 +68,11 @@ $(document).ready(function(){
     
         
     };
+
+    $(".newNote").click(function(){
+        
+        alert("hi");
+    });
     
    
 //    $('.newNote').mousedown( function () {
