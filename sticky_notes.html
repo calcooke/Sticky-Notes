@@ -83,6 +83,8 @@ $(document).ready(function(){
 });
     
     
+    
+    
     $(document).on("mousedown", '.newNote', function (e) {
         
         $(this).draggable({ disabled: false,
@@ -100,7 +102,12 @@ $(document).ready(function(){
     
     function loadNotes(){ 
        
-        alert("hi");
+        var notes = JSON.parse(localStorage.stickies || "[]")
+    $.each(notes, function (i, note) {
+        createNote(note.text, note.position);
+    })
+    return notes
+        
        
     };
     
@@ -112,7 +119,7 @@ $(document).ready(function(){
             position: $(this).offset()
         }
     }).get()
-    console.log(JSON.stringify(notes, 0, 4))
+    
     localStorage.stickyNote = JSON.stringify(notes)
         
     };
