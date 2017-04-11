@@ -75,6 +75,8 @@ $(document).ready(function(){
         
     };
     
+});
+    
     
     $(document).on("mousedown", '.newNote', function (e) {
         $(this).draggable({ disabled: false });
@@ -89,7 +91,11 @@ $(document).ready(function(){
     
     function loadNotes(){ 
         
-        alert("hi");
+        var oldNotes = JSON.parse(localStorage.getItem("keyItem"));
+        
+        for(var i = 0; i < oldNotes.length; ++i) { 
+            
+           oldNotes[i].appendTo($("#board"));
     };
     
     function saveText(){
@@ -97,8 +103,7 @@ $(document).ready(function(){
         window.localStorage.setItem("keyItem", JSON.stringify(savedNotes));
     };
     
-});
-    
+
     
     
 </script>
