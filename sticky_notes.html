@@ -33,7 +33,7 @@
     
 $(document).ready(function(){
     
-    var savedNotes = [];
+    
     
     loadNotes(); // POPULATE THE BOARD WITH STICKY NOTES CALLED HERE!!!
     
@@ -91,16 +91,12 @@ $(document).ready(function(){
     
     function loadNotes(){ 
         
-        var oldNotes = JSON.parse(localStorage.getItem("keyItem"));
-        
-        for(var i = 0; i < oldNotes.length; ++i) { 
-            
-           oldNotes[i].appendTo($("#board"));
+       
     };
     
     function saveText(){
         
-        window.localStorage.setItem("keyItem", JSON.stringify(savedNotes));
+        
     };
     
 
