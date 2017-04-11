@@ -33,7 +33,9 @@
     
 $(document).ready(function(){
     
-    loadNotes();
+    var savedNotes = [];
+    
+    loadNotes(); // POPULATE THE BOARD WITH STICKY NOTES CALLED HERE!!!
     
     $("#addNote").click( function(){
         
@@ -60,9 +62,11 @@ $(document).ready(function(){
         
         var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
         
-        stickyText.appendTo(sticky);
+        savedNotes.push(stickyText);
         
-        stickyText.keyup(saveText);
+        stickyText.appendTo(sticky); 
+        
+        stickyText.keyup(saveText);  // SAVING TO LOCAL STORAGE FUNCTION CALLED HERE!!!!
                 
         
     $(sticky).prependTo($("#board")); 
@@ -83,14 +87,14 @@ $(document).ready(function(){
         
     });
     
-    function loadNotes(){
+    function loadNotes(){ 
         
         alert("hi");
     };
     
     function saveText(){
         
-        alert("hi");
+        window.localStorage.setItem("keyItem", JSON.stringify(savedNotes));
     };
     
 });
@@ -111,7 +115,7 @@ function populateTable(){
     for(var i = 0; i < pastMembers.length; ++i) {   //Loop through this variable
     
                                           
-                                          put the key value pairs into the table
+                                          put the key value pairs into the table/put stickies on board?
                                           
                                           
      window.localStorage.setItem("keyItem", JSON.stringify(members));    // Convert to JSON format to store locally.
