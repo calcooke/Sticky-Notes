@@ -3,7 +3,8 @@
 <head>
 <title>Page Title</title>
     
-<link rel="stylesheet" type="text/css" href="sticky_notes_css.css">    
+<link rel="stylesheet" type="text/css" href="sticky_notes_css.css">
+    <link src="../sticky_notes_Jquery.js"> 
 
 <script
   src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -29,83 +30,7 @@
     
     </div>
  
-<script>
-    
-$(document).ready(function(){
-    
-    $("#addNote").click( function(){
-        
-   
-       createNote();
-            
-   
-        });
-        
-        
-    function createNote(){
-        
-        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
-            
-            position: "absolute",
-            top: 200,
-            left: 200,
-            height: 300,
-            width: 250,
-            backgroundColor: "#FDFDC3"
-        
-   
-        });
-        
-        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
-        
-        stickyText.appendTo(sticky);
-        
-        
-        
-        
-    $(sticky).prependTo($("#board")).draggable(); 
-        
-        
-        
-    
-        
-    };
-    
-   
-//    $('.newNote').mousedown( function () {
-//        alert("yay");
-//        
-//    });
-    
-    
-    
-//    $(document).on("mousedown", '#header', function (e) {
-//        $(event.target).parent().draggable("enabled");
-//       
-//        
-//    });
-//    
-//    $('#header').mouseup( function(){
-//        
-//        $(this).draggable("disabled");
-//        
-//    })
-    
-      
-        
-   
-    
-    
-   
-    
-    $(document).on("click", '#deleteButton', function (e) {
-        $(event.target).parent().fadeOut();
-        
-    });
-    
-});
-    
-</script>
+
     
 </body>
     
