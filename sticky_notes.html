@@ -37,12 +37,12 @@ $(document).ready(function(){
     
     loadNotes(); // POPULATE THE BOARD WITH STICKY NOTES CALLED HERE!!!
     
-    $("#addNote").click( function(){
+    $("#board").click( function(e){
         
         var placeholder = "Title"
         var position = {
-            top: 200,
-            left: 200,
+            top: event.pageY,
+            left: event.pageX,
         };
    
        createNote(placeholder, position);
@@ -91,7 +91,7 @@ $(document).ready(function(){
         
         notes = $("#board .newNote").map(function (i) {
         return {
-            text: $("#textArea").text(),
+            text: $("#textArea", this).text(),
             position: $(this).offset()
         }
     }).get()
