@@ -84,10 +84,13 @@ $(document).ready(function(){
     
     
     $(document).on("mousedown", '.newNote', function (e) {
+        
         $(this).draggable({ disabled: false,
-                          stop: loadNotes});
+                          stop: saveText});
    }).on("mouseup", '.newNote', function (e) {
-        $(this).draggable({ disabled: true })});
+        
+        $(this).draggable({ disabled: true })
+    });
 
  
     $(document).on("click", '#deleteButton', function (e) {
