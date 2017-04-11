@@ -59,47 +59,21 @@ $(document).ready(function(){
         var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
         
         stickyText.appendTo(sticky);
-        
-        
-        
+                
         
     $(sticky).prependTo($("#board")); 
         
-    
+   
         
     };
+    
+    
+    $(document).on("mousedown", '.newNote', function (e) {
+        $(this).draggable({ disabled: false });
+   }).on("mouseup", '.newNote', function (e) {
+        $(this).draggable({ disabled: true })});
 
-//    $("#newNote").click(function(){
-//        
-//        alert("hi");
-//    });
-    
-   
-//    $('.newNote').mousedown( function () {
-//        alert("yay");
-//        
-//    });
-    
-    
-    
-    $(document).on("mousedown", '#header', function (e) {
-        $(this).parent().draggable({ disabled: false });
-   }).on("mouseup", '#header', function (e) {
-        $(this).parent().draggable({ disabled: true })});
-//    
-//    $('#header').mouseup( function(){
-//        
-//        $(this).draggable("disabled");
-//        
-//    })
-    
-      
-        
-   
-    
-    
-   
-    
+ 
     $(document).on("click", '#deleteButton', function (e) {
         $(event.target).parent().fadeOut().remove();
         
@@ -111,4 +85,20 @@ $(document).ready(function(){
     
 </body>
     
-  
+<!--
+function populateTable(){   
+
+	var newTable = document.getElementById("theTable");     //Putting the blank table into a variable to work with it
+      
+	var pastMembers = JSON.parse(localStorage.getItem("keyItem"));   //Parsing the objects in local storage to a string and store in a variable
+       
+    for(var i = 0; i < pastMembers.length; ++i) {   //Loop through this variable
+    
+                                          
+                                          put the key value pairs into the table
+                                          
+                                          
+     window.localStorage.setItem("keyItem", JSON.stringify(members));    // Convert to JSON format to store locally.
+                                          
+                                          this was to convert the table into json and store it every time a row was created
+  -->
