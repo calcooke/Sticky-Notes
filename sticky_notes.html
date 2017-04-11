@@ -44,7 +44,7 @@ $(document).ready(function(){
         
     function createNote(){
         
-        var sticky = $("<div id='newNote' > <button id='deleteButton'>X</button> </div>").css({
+        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
             
             position: "absolute",
             top: 200,
@@ -82,10 +82,10 @@ $(document).ready(function(){
     
     
     
-    $(document).on("mousedown", '#newNote', function (e) {
-        $(this).draggable({ disabled: false });
-   }).on("mouseup", '#newNote', function (e) {
-        $(this).draggable({ disabled: true })});
+    $(document).on("mousedown", '#header', function (e) {
+        $(this).parent().draggable({ disabled: false });
+   }).on("mouseup", '#header', function (e) {
+        $(this).parent().draggable({ disabled: true })});
 //    
 //    $('#header').mouseup( function(){
 //        
