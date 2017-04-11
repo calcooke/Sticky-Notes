@@ -51,19 +51,6 @@ $(document).ready(function(){
         });
         
         
-    function createNote(placeholder, position){
-        
-        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
-            
-            position: "absolute",
-            top: position.top,
-            left: position.left,
-            height: 300,
-            width: 250,
-            backgroundColor: "#FDFDC3"
-        
-   
-        });
         
         var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
         
@@ -78,9 +65,9 @@ $(document).ready(function(){
         
    
         
-    };
+    });
     
-});
+);
     
     
     
@@ -104,7 +91,9 @@ $(document).ready(function(){
        
         var notes = JSON.parse(localStorage.stickies || "[]")
     $.each(notes, function (i, note) {
+        
         createNote(note.text, note.position);
+        
     })
     return notes
         
@@ -123,6 +112,20 @@ $(document).ready(function(){
     localStorage.stickyNote = JSON.stringify(notes)
         
     };
+    
+    function createNote(placeholder, position){
+        
+        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
+            
+            position: "absolute",
+            top: position.top,
+            left: position.left,
+            height: 300,
+            width: 250,
+            backgroundColor: "#FDFDC3"
+        
+   
+        });
     
 
     
