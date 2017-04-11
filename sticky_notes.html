@@ -91,7 +91,7 @@ $(document).ready(function(){
         
         notes = $("#board .newNote").map(function (i) {
         return {
-            text: $("#textArea", this).text(),
+            text: $("#textArea").text(),
             position: $(this).offset()
         }
     }).get()
