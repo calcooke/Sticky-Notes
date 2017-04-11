@@ -61,6 +61,8 @@ $(document).ready(function(){
         var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
         
         stickyText.appendTo(sticky);
+        
+        stickyText.keyup(saveText);
                 
         
     $(sticky).prependTo($("#board")); 
@@ -82,6 +84,11 @@ $(document).ready(function(){
     });
     
     function loadNotes(){
+        
+        alert("hi");
+    };
+    
+    function saveText(){
         
         alert("hi");
     };
