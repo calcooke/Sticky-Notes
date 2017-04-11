@@ -59,14 +59,15 @@ $(document).ready(function(){
     
     
     
-    $(document).on("mousedown", '.newNote', function (e) {
-        event.stopPropagation();
-        $(this).draggable({ disabled: false,
+    $(document).on("mousedown", '#header', function (e) {
+        
+        $(this).parent()draggable({ disabled: false,
                           stop: saveText});
         
-   }).on("mouseup", '.newNote', function (e) {
-        event.stopPropagation();
-        $(this).draggable({ disabled: true })
+        
+   }).on("mouseup", '#header', function (e) {
+        
+        $(this).parent()draggable({ disabled: true })
     });
 
  
