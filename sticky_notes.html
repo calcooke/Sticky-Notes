@@ -57,7 +57,7 @@ $(document).ready(function(){
     
     $("newNote").click(function(){
         
-        $("#board").off("click");
+        $("#board").off("click");            //BREAKS THE CLICK TO CREATE NEW NOTE EVENT WHILE CLICKING ON A NOTE
         
     });
     
@@ -74,11 +74,13 @@ $(document).ready(function(){
    }).on("mouseup", '#header', function (e) {
         
         $(this).parent().draggable({ disabled: true })
+        
+        $("#board").on("click");
     });
 
  
     $(document).on("click", '#deleteButton', function (e) {
-        $(event.target).parent().fadeOut().remove();
+        $(event.target).parent().fadeOut(200, function () { $(this).remove(); });
         
     });
     
