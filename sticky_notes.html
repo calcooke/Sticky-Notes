@@ -107,7 +107,7 @@ $(document).ready(function(){
         
         notes = $("#board .newNote").map(function (i) {
         return {
-            text: $("#textArea", this).text(),
+            text: $("#textArea", this).val(),
             position: $(this).offset()
         }
     }).get()
@@ -116,7 +116,9 @@ $(document).ready(function(){
         
     };
     
-    function createNote(placeholder, position){                               //CREATE NOTES - CREATE NOTES - CREATE NOTES
+    function createNote(text, position){                               //CREATE NOTES - CREATE NOTES - CREATE NOTES
+        
+        var text = " ";
         
         var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable().css({
             
@@ -134,7 +136,7 @@ $(document).ready(function(){
         
         });
         
-        var stickyText = $("<textarea id='textArea' class='theText'></textarea>").dblclick(function(e){
+        var stickyText = $("<textarea id='textArea' class='theText'> + text + </textarea>").dblclick(function(e){
         
         event.stopPropagation();
         
