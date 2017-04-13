@@ -42,7 +42,7 @@ $(document).ready(function(){
     
     $("#board").dblclick( function(e){
         
-        var placeholder = "Title"
+        var placeholder = "Type here..."
         var position = {
             top: event.pageY,
             left: event.pageX,
@@ -56,10 +56,7 @@ $(document).ready(function(){
         
     $(".newNote").draggable();
     
-    $("textArea").css({
-        
-        'resize' : "none"
-    });
+    
     
 });
     
@@ -129,7 +126,11 @@ $(document).ready(function(){
         
         });
         
-        var stickyText = $('<textarea id="textArea" class="theText">' + text + '</textarea>').dblclick(function(e){
+        var stickyText = $('<textarea id="textArea" class="theText">' + text + '</textarea>').css({
+        
+        'resize' : "none"
+            
+        }).dblclick(function(e){
         
         event.stopPropagation();
         
