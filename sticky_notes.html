@@ -56,7 +56,7 @@ $(document).ready(function(){
         
     $(".newNote").draggable();
     
-    $("textarea").css({
+    $("textArea").css({
         
         'resize' : "none"
     });
@@ -75,8 +75,8 @@ $(document).ready(function(){
 
  
     $(document).on("click", '#deleteButton', function (e) {
-        $(event.target).parent().fadeOut(200, function () { $(this).remove(); });
-        saveText;
+        $(event.target).parent().fadeOut(200, function () { $(this).remove(), saveText(); });
+        
         
     });
     
@@ -96,7 +96,7 @@ $(document).ready(function(){
     
     function saveText(){                                              //SAVE NOTES - SAVE NOTES - SAVE NOTES
         
-        alert("hi");
+        
         
         notes = $("#board .newNote").map(function (i) {
         return {
