@@ -65,7 +65,7 @@ $(document).ready(function(){
     
     
        
-    $(document).on("mousedown", '.newNote', function (e) {
+    $(document).on("mousedown", '.newNote', function (e) {    // BRINGS THE SELECTED STICKY NOTE TO THE FRONT
         
        $('.newNote').css("zIndex", '1');
         $(this).css('zIndex', '1000');
@@ -76,6 +76,7 @@ $(document).ready(function(){
  
     $(document).on("click", '#deleteButton', function (e) {
         $(event.target).parent().fadeOut(200, function () { $(this).remove(); });
+        saveText;
         
     });
     
@@ -94,6 +95,8 @@ $(document).ready(function(){
     };
     
     function saveText(){                                              //SAVE NOTES - SAVE NOTES - SAVE NOTES
+        
+        alert("hi");
         
         notes = $("#board .newNote").map(function (i) {
         return {
