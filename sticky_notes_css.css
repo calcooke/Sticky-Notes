@@ -25,7 +25,8 @@
     
     width: 240px;
     height: 240px;
-    background-Color: #FF530D
+    background-Color: #FF530D;
+    margin-top: 30px;
 }
 
 h1{

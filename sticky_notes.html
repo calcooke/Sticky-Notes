@@ -55,7 +55,7 @@ $(document).ready(function(){
         
     $(".theText").click(function(e){
         
-        alert("hi");
+        event.stopPropagation();
         
     });
         
@@ -67,18 +67,18 @@ $(document).ready(function(){
     
     
     
-    $(document).on("mousedown", '#header', function (e) {
+    $(document).on("mousedown", '.newNote', function (e) {
         
-        $(this).parent().draggable({ disabled: false,
+        $(this).draggable({ disabled: false,
                           stop: saveText,
                                    });
         event.stopPropagation();
         $("#board").off("click");
         
         
-   }).on("mouseup", '#header', function (e) {
+   }).on("mouseup", '.newNote', function (e) {
         
-        $(this).parent().draggable({ disabled: true })
+        $(this).draggable({ disabled: true })
         event.stopPropagation();
         
         $("#board").on("click");
@@ -131,7 +131,7 @@ $(document).ready(function(){
    
         });
         
-        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' class='theText' contenteditable='true'></div>");
+        var stickyText = $("<div id='textArea' class='theText' contenteditable='true'></div>");
         
         
         
