@@ -8,8 +8,9 @@
 #deleteButton{
     
     position: absolute;
-    bottom : 2px;
+    top : 2px;
     right: 2px;
+    opacity: 0.5;
 }
 
 #board{
@@ -19,6 +20,11 @@
     height: 600px;
     
     background-color: coral;
+}
+
+.newNote{
+    
+    background-image: url(images/texture.png);
 }
 
 #textArea{
