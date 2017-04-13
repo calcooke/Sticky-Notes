@@ -110,7 +110,9 @@ $(document).ready(function(){
         
         
         
-        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable().css({
+        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable({
+        stop: saveText
+    }).css({
             
             position: "absolute",
             top: position.top,

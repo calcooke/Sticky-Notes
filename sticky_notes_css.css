@@ -19,7 +19,7 @@
     width: screen.width;
     height: 600px;
     
-    background-color: coral;
+    background-image: url(images/table.jpg);
 }
 
 .newNote{
