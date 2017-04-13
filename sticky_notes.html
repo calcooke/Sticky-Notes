@@ -54,12 +54,12 @@ $(document).ready(function(){
     
     
 });
-//    
-//    $("newNote").click(function(){
-//        
-//        $("#board").off("click");            //BREAKS THE CLICK TO CREATE NEW NOTE EVENT WHILE CLICKING ON A NOTE
-//        
-//    });
+    
+    $("newNote").click(function(e){
+        
+        //$("#board").off("dblclick");            //BREAKS THE CLICK TO CREATE NEW NOTE EVENT WHILE CLICKING ON A NOTE
+        event.stopPropagation();
+    });
     
     
     
@@ -68,14 +68,16 @@ $(document).ready(function(){
         $(this).parent().draggable({ disabled: false,
                           stop: saveText,
                                    });
-        //$("#board").off("click");
+        event.stopPropagation();
+        $("#board").off("click");
         
         
    }).on("mouseup", '#header', function (e) {
         
         $(this).parent().draggable({ disabled: true })
+        event.stopPropagation();
         
-        //$("#board").on("click");
+        $("#board").on("click");
     });
 
  
