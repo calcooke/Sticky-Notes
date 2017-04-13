@@ -118,7 +118,7 @@ $(document).ready(function(){
     
     function createNote(text, position){                               //CREATE NOTES - CREATE NOTES - CREATE NOTES
         
-        var text = " ";
+        
         
         var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable().css({
             
@@ -136,7 +136,7 @@ $(document).ready(function(){
         
         });
         
-        var stickyText = $("<textarea id='textArea' class='theText'> + text + </textarea>").dblclick(function(e){
+        var stickyText = $('<textarea id="textArea" class="theText">' + text + '</textarea>').dblclick(function(e){
         
         event.stopPropagation();
         
