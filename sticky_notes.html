@@ -67,13 +67,12 @@ $(document).ready(function(){
     
     
 //    
-//    $(document).on("mousedown", '.newNote', function (e) {
-//        
-//        $(this).draggable({ disabled: false,
-//                          stop: saveText,
-//                                   });
-//        event.stopPropagation();
-//        $("#board").off("click");
+    $(document).on("mousedown", '.newNote', function (e) {
+        
+       $('.newNote').css("zIndex", '1');
+        $(this).css('zIndex', '1000');
+        
+    });
 //        
 //        
 //   }).on("mouseup", '.newNote', function (e) {
@@ -129,13 +128,17 @@ $(document).ready(function(){
             backgroundColor: "#FDFDC3"
         
    
+        }).dblclick(function(e){
+        
+        event.stopPropagation();
+        
         });
         
         var stickyText = $("<textarea id='textArea' class='theText'></textarea>").dblclick(function(e){
         
         event.stopPropagation();
         
-    });;
+        });
         
         
         
