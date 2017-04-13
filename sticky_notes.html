@@ -53,11 +53,11 @@ $(document).ready(function(){
    
         });
         
-    $(".theText").click(function(e){
-        
-        event.stopPropagation();
-        
-    });
+//    $(".theText").dblclick(function(e){
+//        
+//        event.stopPropagation();
+//        
+//    });
         
     $(".newNote").draggable();
     
@@ -131,7 +131,11 @@ $(document).ready(function(){
    
         });
         
-        var stickyText = $("<textarea id='textArea' class='theText'></textarea>");
+        var stickyText = $("<textarea id='textArea' class='theText'></textarea>").dblclick(function(e){
+        
+        event.stopPropagation();
+        
+    });;
         
         
         
