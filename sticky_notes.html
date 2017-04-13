@@ -28,6 +28,9 @@
     
     
     </div>
+    
+    <div id="testDiv"></div>
+</body>
  
 <script>
     
@@ -50,9 +53,10 @@ $(document).ready(function(){
    
         });
         
-    $("#textArea").click(function(e){
+    $(".theText").click(function(e){
+        
         alert("hi");
-    
+        
     });
         
     
@@ -127,7 +131,7 @@ $(document).ready(function(){
    
         });
         
-        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' contenteditable='true'></div>");
+        var stickyText = $("<h1 id='header' contenteditable='true'>title</h1> <div id='textArea' class='theText' contenteditable='true'></div>");
         
         
         
@@ -147,7 +151,7 @@ $(document).ready(function(){
     
 </script>
     
-</body>
+
    
     
 
