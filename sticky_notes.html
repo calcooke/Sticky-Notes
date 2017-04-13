@@ -55,10 +55,16 @@ $(document).ready(function(){
     
 });
     
-    $("newNote").click(function(e){
-        
+    $(".newNote").click(function(e){
+        alert("hi");
         //$("#board").off("dblclick");            //BREAKS THE CLICK TO CREATE NEW NOTE EVENT WHILE CLICKING ON A NOTE
         event.stopPropagation();
+         var msg = "";
+  if ( event.isPropagationStopped() ) {
+    msg = "called";
+  } else {
+    msg = "not called";
+  };
     });
     
     
