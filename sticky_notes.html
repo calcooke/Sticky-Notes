@@ -37,7 +37,7 @@ $(document).ready(function(){
     
     loadNotes(); // POPULATE THE BOARD WITH STICKY NOTES CALLED HERE!!!
     
-    $("#board").click( function(e){
+    $("#board").dblclick( function(e){
         
         var placeholder = "Title"
         var position = {
@@ -54,12 +54,12 @@ $(document).ready(function(){
     
     
 });
-    
-    $("newNote").click(function(){
-        
-        $("#board").off("click");            //BREAKS THE CLICK TO CREATE NEW NOTE EVENT WHILE CLICKING ON A NOTE
-        
-    });
+//    
+//    $("newNote").click(function(){
+//        
+//        $("#board").off("click");            //BREAKS THE CLICK TO CREATE NEW NOTE EVENT WHILE CLICKING ON A NOTE
+//        
+//    });
     
     
     
@@ -68,14 +68,14 @@ $(document).ready(function(){
         $(this).parent().draggable({ disabled: false,
                           stop: saveText,
                                    });
-        $("#board").off("click");
+        //$("#board").off("click");
         
         
    }).on("mouseup", '#header', function (e) {
         
         $(this).parent().draggable({ disabled: true })
         
-        $("#board").on("click");
+        //$("#board").on("click");
     });
 
  
