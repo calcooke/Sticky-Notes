@@ -53,15 +53,10 @@ $(document).ready(function(){
    
         });
         
-//    $(".theText").dblclick(function(e){
-//        
-//        event.stopPropagation();
-//        
-//    });
         
     $(".newNote").draggable();
     
-    $("textarea").attr({
+    $("textarea").css({
         
         'resize' : "none"
     });
@@ -69,24 +64,14 @@ $(document).ready(function(){
 });
     
     
-    
-    
-//    
+       
     $(document).on("mousedown", '.newNote', function (e) {
         
        $('.newNote').css("zIndex", '1');
         $(this).css('zIndex', '1000');
         
     });
-//        
-//        
-//   }).on("mouseup", '.newNote', function (e) {
-//        
-//        $(this).draggable({ disabled: true })
-//        event.stopPropagation();
-//        
-//        $("#board").on("click");
-//    });
+
 
  
     $(document).on("click", '#deleteButton', function (e) {
