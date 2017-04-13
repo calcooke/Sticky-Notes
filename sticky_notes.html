@@ -59,30 +59,30 @@ $(document).ready(function(){
         
     });
         
-    
+    $(".newNote").draggable();
     
 });
     
     
     
     
-    
-    $(document).on("mousedown", '.newNote', function (e) {
-        
-        $(this).draggable({ disabled: false,
-                          stop: saveText,
-                                   });
-        event.stopPropagation();
-        $("#board").off("click");
-        
-        
-   }).on("mouseup", '.newNote', function (e) {
-        
-        $(this).draggable({ disabled: true })
-        event.stopPropagation();
-        
-        $("#board").on("click");
-    });
+//    
+//    $(document).on("mousedown", '.newNote', function (e) {
+//        
+//        $(this).draggable({ disabled: false,
+//                          stop: saveText,
+//                                   });
+//        event.stopPropagation();
+//        $("#board").off("click");
+//        
+//        
+//   }).on("mouseup", '.newNote', function (e) {
+//        
+//        $(this).draggable({ disabled: true })
+//        event.stopPropagation();
+//        
+//        $("#board").on("click");
+//    });
 
  
     $(document).on("click", '#deleteButton', function (e) {
@@ -119,7 +119,7 @@ $(document).ready(function(){
     
     function createNote(placeholder, position){                               //CREATE NOTES - CREATE NOTES - CREATE NOTES
         
-        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").css({
+        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable().css({
             
             position: "absolute",
             top: position.top,
@@ -131,7 +131,7 @@ $(document).ready(function(){
    
         });
         
-        var stickyText = $("<div id='textArea' class='theText' contenteditable='true'></div>");
+        var stickyText = $("<textarea id='textArea' class='theText'></textarea>");
         
         
         
