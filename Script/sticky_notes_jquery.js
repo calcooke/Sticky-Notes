@@ -2,7 +2,7 @@ $(document).ready(function(){
     
     
     
-    loadNotes(); // POPULATE THE BOARD WITH STICKY NOTES CALLED HERE!!!
+    loadNotes(); // POPULATE THE BOARD WITH STICKY ON DOUBLECLICK NOTES CALLED HERE!!!
     
     $("#board").dblclick( function(e){
         
@@ -12,7 +12,7 @@ $(document).ready(function(){
             left: event.pageX,
         };
    
-       createNote(placeholder, position);
+       createNote(placeholder, position);    //created by calling this function
             
    
         });
