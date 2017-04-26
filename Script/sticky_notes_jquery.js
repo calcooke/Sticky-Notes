@@ -44,8 +44,6 @@ $(document).ready(function(){
         
 });
 
-   
-    
     $(document).on("mousedown", '.newNote', function (e) {    // BRINGS THE SELECTED STICKY NOTE TO THE FRONT
         
         
@@ -55,7 +53,6 @@ $(document).ready(function(){
     });
 
 
- 
     $(document).on("click", '#deleteButton', function (e) {
         
         
@@ -65,7 +62,6 @@ $(document).ready(function(){
     });
 
 
-    
     function loadNotes(){                                           //LOAD NOTES - LOAD NOTES - LOAD NOTES
        
         var notes = JSON.parse(localStorage.stickyNote || "[]");
@@ -80,26 +76,30 @@ $(document).ready(function(){
               
     };
     
+
     function saveText(){                                              //SAVE NOTES - SAVE NOTES - SAVE NOTES
         
  
         notes = $("#board .newNote").map(function (i) {
-        return {
-            text: $("#textArea", this).val(),
-            position: $(this).offset()
-        }
-    }).get()
-    
-    localStorage.stickyNote = JSON.stringify(notes)
-        
+            
+            return {
+                text: $("#textArea", this).val(),
+                position: $(this).offset()
+            }
+
+        }).get()
+
+        localStorage.stickyNote = JSON.stringify(notes)
+
     };
     
     function createNote(text, position){                               //CREATE NOTES - CREATE NOTES - CREATE NOTES
         
         
-        
         var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable({
+            
             stop: saveText,
+            
             
     }).css({
             
@@ -118,16 +118,16 @@ $(document).ready(function(){
         
         });
         
+        
         var stickyText = $('<textarea id="textArea" class="theText">' + text + '</textarea>').css({
-        
-        'resize' : "none"
-            
-        }).dblclick(function(e){
-        
-        event.stopPropagation();
+
+            'resize' : "none"
+
+            }).dblclick(function(e){
+
+            event.stopPropagation();
         
         });
-        
         
         
         stickyText.appendTo(sticky); 
@@ -135,7 +135,7 @@ $(document).ready(function(){
         stickyText.keyup(saveText);                                       // SAVING TO LOCAL STORAGE FUNCTION CALLED HERE!!!!
                 
         
-    $(sticky).prependTo($("#board")); 
+        $(sticky).prependTo($("#board")); 
         
    
         
