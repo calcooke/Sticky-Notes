@@ -1,16 +1,22 @@
 $(document).ready(function(){
     
-    $("notSnappable").toggle();
+   
     
     $('#snappable').click(function(){
               
         $(".newNote").draggable({
             snap: true
         });
-        $(this).toggle();
-        $("notSnappable").show();
-                          
-                          });
+  
+    });
+    
+    $('#notSnappable').click(function(){
+              
+        $(".newNote").draggable({
+            snap: false
+        });
+  
+    });
     
     
     
