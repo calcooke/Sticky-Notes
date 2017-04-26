@@ -84,8 +84,9 @@ $(document).ready(function(){
             position: "absolute",
             top: position.top,
             left: position.left,
-            height: 300,
-            width: 250,
+            height: 250,
+            width: 200,
+            "zIndex", '1'
            
         
    
