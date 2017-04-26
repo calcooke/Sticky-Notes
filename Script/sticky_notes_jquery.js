@@ -1,5 +1,17 @@
 $(document).ready(function(){
     
+    $("notSnappable").toggle();
+    
+    $('#snappable').click(function(){
+              
+        $(".newNote").draggable({
+            snap: true
+        });
+        $(this).toggle();
+        $("notSnappable").show();
+                          
+                          });
+    
     
     
     loadNotes(); // POPULATE THE BOARD WITH STICKY ON DOUBLECLICK NOTES CALLED HERE!!!
@@ -18,7 +30,7 @@ $(document).ready(function(){
         });
         
         
-    $(".newNote").draggable();
+    
     
 
     
@@ -78,7 +90,7 @@ $(document).ready(function(){
         
         var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable({
             stop: saveText,
-            snap:true
+            
     }).css({
             
             position: "absolute",
@@ -119,10 +131,6 @@ $(document).ready(function(){
         
     };
 
-    $('#snappable').click(function(){
-              
-        alert('hi')
-                          
-                          });
+    
  
 
