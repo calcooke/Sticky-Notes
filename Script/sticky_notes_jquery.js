@@ -23,6 +23,10 @@ $(document).ready(function(){
     
     
 });
+
+    $("#board").on("tap",function(){
+  $(this).hide();
+});
     
     
        
