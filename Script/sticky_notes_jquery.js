@@ -86,7 +86,7 @@ $(document).ready(function(){
             left: position.left,
             height: 250,
             width: 200,
-            "zIndex", '1'
+            zIndex: 1000
            
         
    
@@ -118,5 +118,11 @@ $(document).ready(function(){
    
         
     };
-    
+
+    $('#snappable').click(function(){
+              
+        alert('hi')
+                          
+                          });
+ 
 
