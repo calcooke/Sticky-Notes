@@ -25,6 +25,7 @@
 .newNote{
     
     background-image: url(../images/texture.png);
+    padding: 5px;
 }
 
 #textArea{
