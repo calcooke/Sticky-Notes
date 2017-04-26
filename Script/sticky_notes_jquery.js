@@ -76,9 +76,7 @@ $(document).ready(function(){
         
         
         
-        var sticky = $("<main class="container">
-        <div class="row">
-            <div class="col-sm-12"><div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable({
+        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable({
         stop: saveText
     }).css({
             
