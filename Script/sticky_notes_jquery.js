@@ -76,8 +76,9 @@ $(document).ready(function(){
         
         
         
-        var sticky = $("<div class='newNote col-sm-12' > <button id='deleteButton'>X</button> </div>").draggable({
-        stop: saveText
+        var sticky = $("<div class='newNote' > <button id='deleteButton'>X</button> </div>").draggable({
+            stop: saveText,
+            snap:true
     }).css({
             
             position: "absolute",
