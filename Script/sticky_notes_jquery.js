@@ -20,13 +20,13 @@ $(document).ready(function(){
         
     $(".newNote").draggable();
     
-    
+     $("#.newNote").on("tap",function(){
+  alert("hi")
+});
     
 });
 
-    $("#board").on("tap",function(){
-  $(this).hide();
-});
+   
     
     
        
