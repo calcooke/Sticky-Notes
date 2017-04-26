@@ -20,7 +20,7 @@ $(document).ready(function(){
         
     $(".newNote").draggable();
     
-     $("#.newNote").on("tap",function(){
+     $(document).on("tap",function(){
   alert("hi")
 });
     
