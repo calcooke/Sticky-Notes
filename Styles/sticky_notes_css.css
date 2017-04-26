@@ -39,10 +39,4 @@ h1{
     margin-bottom: 2px;
 }
 
-@media screen and (min-width: 1000px) {
-    .newNote {
-        height: 350px;
-        width: 300px;
-    }
-}
 

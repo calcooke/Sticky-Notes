@@ -26,7 +26,7 @@ $(document).ready(function(){
     });
     
     
-    loadNotes(); // POPULATE THE BOARD WITH STICKY ON DOUBLECLICK NOTES CALLED HERE!!!
+    loadNotes(); // CREATE A STICKY NOTE ON DOUBLECLICK CALLED HERE!!!
     
     $("#board").dblclick( function(e){
         
@@ -36,7 +36,10 @@ $(document).ready(function(){
             left: event.pageX,
         };
    
-        createNote(placeholder, position);    //created by calling this function
+        createNote(placeholder, position);    //created by calling this function DOWN BELOW
+        
+            
+        saveText();        //SAVES POSITION TO LOCAL STORAGE
             
    
     });
@@ -53,7 +56,7 @@ $(document).ready(function(){
     });
 
 
-    $(document).on("click", '#deleteButton', function (e) {
+    $(document).on("click", '#deleteButton', function (e) {  //Deletes sticky notes
         
         
         $(event.target).parent().fadeOut(200, function () { $(this).remove(), saveText(); });
@@ -101,25 +104,26 @@ $(document).ready(function(){
             stop: saveText,
             
             
-    }).css({
+            }).css({
             
-            position: "absolute",
-            top: position.top,
-            left: position.left,
-            height: 250,
-            width: 200,
-            zIndex: 1000
+                position: "absolute",
+                top: position.top,
+                left: position.left,                   //CREATE THE DIV
+                height: 250,
+                width: 200,
+                zIndex: 1000
            
         
    
-        }).dblclick(function(e){
+            }).dblclick(function(e){
         
-        event.stopPropagation();
-        
-        });
+                event.stopPropagation();
         
         
-        var stickyText = $('<textarea id="textArea" class="theText">' + text + '</textarea>').css({
+            });
+        
+        
+        var stickyText = $('<textarea id="textArea" class="theText">' + text + '</textarea>').css({      //CREATE THE TEXT AREA
 
             'resize' : "none"
 
@@ -130,15 +134,13 @@ $(document).ready(function(){
         });
         
         
-        stickyText.appendTo(sticky); 
+        stickyText.appendTo(sticky);                                //PUT THE TEXT AREA INTO THE DIV
         
-        stickyText.keyup(saveText);                                       // SAVING TO LOCAL STORAGE FUNCTION CALLED HERE!!!!
-                
+        stickyText.keyup(saveText);                                       // SAVING TO LOCAL STORAGE CALLED HERE
+                        
+        $(sticky).prependTo($("#board"));                               //STICK NOTE TO BOARD
         
-        $(sticky).prependTo($("#board")); 
-        
-   
-        
+       
     };
 
     
