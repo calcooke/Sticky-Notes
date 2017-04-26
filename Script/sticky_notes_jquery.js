@@ -2,7 +2,7 @@ $(document).ready(function(){
     
    
     
-    $('#snappable').click(function(){
+    $('#snappable').click(function(){       //THIS MAKES THE NOTES SNAP TOGETHER
               
         $(".newNote").draggable({
             snap: true
@@ -18,6 +18,12 @@ $(document).ready(function(){
   
     });
     
+    $('#deleteAll').click(function(){    //Delete all notes
+              
+        $('.newNote').remove();
+        saveText();
+  
+    });
     
     
     loadNotes(); // POPULATE THE BOARD WITH STICKY ON DOUBLECLICK NOTES CALLED HERE!!!
@@ -30,55 +36,53 @@ $(document).ready(function(){
             left: event.pageX,
         };
    
-       createNote(placeholder, position);    //created by calling this function
+        createNote(placeholder, position);    //created by calling this function
             
    
-        });
+    });
         
         
-    
-    
-
-    
 });
 
    
     
-    
-       
     $(document).on("mousedown", '.newNote', function (e) {    // BRINGS THE SELECTED STICKY NOTE TO THE FRONT
         
-       $('.newNote').css("zIndex", '1');
-        $(this).css('zIndex', '1000');
+        
+           $('.newNote').css("zIndex", '1');
+            $(this).css('zIndex', '1000');
         
     });
 
 
  
     $(document).on("click", '#deleteButton', function (e) {
+        
+        
         $(event.target).parent().fadeOut(200, function () { $(this).remove(), saveText(); });
         
         
     });
+
+
     
     function loadNotes(){                                           //LOAD NOTES - LOAD NOTES - LOAD NOTES
        
         var notes = JSON.parse(localStorage.stickyNote || "[]");
         
-    $.each(notes, function (i, note) {
+        $.each(notes, function (i, note) {
         
-        createNote(note.text, note.position);
+            createNote(note.text, note.position);
         
-    })
-    return notes
+        })
         
-       
+        return notes
+              
     };
     
     function saveText(){                                              //SAVE NOTES - SAVE NOTES - SAVE NOTES
         
-        
-        
+ 
         notes = $("#board .newNote").map(function (i) {
         return {
             text: $("#textArea", this).val(),
