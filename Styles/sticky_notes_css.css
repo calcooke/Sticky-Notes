@@ -19,12 +19,12 @@
     width: screen.width;
     height: 600px;
     
-    background-image: url(images/table.jpg);
+    background-image: url(../images/table.jpg);
 }
 
 .newNote{
     
-    background-image: url(images/texture.png);
+    background-image: url(../images/texture.png);
 }
 
 #textArea{
